@@ -96,13 +96,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     ],
                   ),
                 ),
-                if (banner == null)
-                  const SizedBox(height: 50)
-                else
-                  SizedBox(
-                    height: 50,
-                    child: AdWidget(ad: banner!),
-                  ),
+                // if (banner == null)
+                //   const SizedBox(height: 50)
+                // else
+                //   SizedBox(
+                //     height: 50,
+                //     child: AdWidget(ad: banner!),
+                //   ),
               ],
             ),
           ),

@@ -1,0 +1,1 @@
+Color theme feature is now available.
