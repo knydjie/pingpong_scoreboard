@@ -73,6 +73,7 @@ class _WinnerScreenState extends State<WinnerScreen> {
         return false;
       },
       child: Scaffold(
+        backgroundColor: mainColor,
         body: Column(
           children: <Widget>[
             Expanded(
@@ -95,7 +96,7 @@ class _WinnerScreenState extends State<WinnerScreen> {
                                       Expanded(
                                         child: Column(
                                           children: <Widget>[
-                                            const Text('POINT',
+                                            Text('POINT',
                                                 textAlign: TextAlign.center,
                                                 style: pointResultTextStyle),
                                             const SizedBox(
@@ -131,7 +132,11 @@ class _WinnerScreenState extends State<WinnerScreen> {
                                           child: Text(
                                             '${gameData.playerOneMatchWin}',
                                             textAlign: TextAlign.center,
-                                            style: pointTextStyle,
+                                            style: TextStyle(
+                                              //TODO
+                                              color: textGameScreenColor,
+                                              fontWeight: FontWeight.bold,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -146,8 +151,8 @@ class _WinnerScreenState extends State<WinnerScreen> {
                                       style: winnerResultTextStyle.copyWith(
                                         color: gameData.playerOneMatchWin >
                                                 gameData.playerTwoMatchWin
-                                            ? mainGreen
-                                            : lightestGreen,
+                                            ? mainColor
+                                            : lightestColor,
                                       ),
                                     ),
                                   ),
@@ -175,14 +180,18 @@ class _WinnerScreenState extends State<WinnerScreen> {
                                           child: Text(
                                             '${gameData.playerTwoMatchWin}',
                                             textAlign: TextAlign.center,
-                                            style: pointTextStyle,
+                                            style: TextStyle(
+                                              //TODO
+                                              color: textGameScreenColor,
+                                              fontWeight: FontWeight.bold,
+                                            ),
                                           ),
                                         ),
                                       ),
                                       Expanded(
                                         child: Column(
                                           children: <Widget>[
-                                            const Text('POINT',
+                                            Text('POINT',
                                                 textAlign: TextAlign.center,
                                                 style: pointResultTextStyle),
                                             const SizedBox(
@@ -223,8 +232,8 @@ class _WinnerScreenState extends State<WinnerScreen> {
                                       style: winnerResultTextStyle.copyWith(
                                         color: gameData.playerOneMatchWin >
                                                 gameData.playerTwoMatchWin
-                                            ? lightestGreen
-                                            : mainGreen,
+                                            ? lightestColor
+                                            : mainColor,
                                       ),
                                     ),
                                   ),
@@ -240,9 +249,9 @@ class _WinnerScreenState extends State<WinnerScreen> {
                     left: 30.0,
                     top: 23.0,
                     child: GestureDetector(
-                      child: const Icon(
+                      child: Icon(
                         Icons.arrow_back,
-                        color: mainGreen,
+                        color: mainColor,
                         size: 30.0,
                       ),
                       onTap: () {

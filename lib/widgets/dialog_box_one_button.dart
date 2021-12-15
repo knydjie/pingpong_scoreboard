@@ -32,7 +32,7 @@ class _ReusableOneButtonDialogBoxState
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20.0),
         ),
-        backgroundColor: lightestGreen,
+        backgroundColor: lightestColor,
         child: Padding(
           padding: const EdgeInsets.all(30.0),
           child: Column(
@@ -40,8 +40,8 @@ class _ReusableOneButtonDialogBoxState
             children: <Widget>[
               Text(
                 widget.title,
-                style: const TextStyle(
-                  color: mainGreen,
+                style: TextStyle(
+                  color: mainColor,
                   fontSize: 25.0,
                   fontWeight: FontWeight.bold,
                 ),
@@ -51,8 +51,8 @@ class _ReusableOneButtonDialogBoxState
               ),
               Text(
                 widget.description,
-                style: const TextStyle(
-                  color: mainGreen,
+                style: TextStyle(
+                  color: mainColor,
                   fontSize: 15.0,
                 ),
               ),

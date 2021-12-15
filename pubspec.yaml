@@ -29,7 +29,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  # google_mobile_ads: ^0.13.5
+  google_mobile_ads: ^0.13.5
   provider: ^6.0.1
 
 

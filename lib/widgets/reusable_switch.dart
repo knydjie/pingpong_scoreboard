@@ -23,10 +23,10 @@ class _ReusableSwitchState extends State<ReusableSwitch> {
     return Switch.adaptive(
       value: widget.value,
       onChanged: widget.onChanged,
-      activeTrackColor: aBitGray,
-      inactiveTrackColor: darkestBlue,
-      activeColor: blueThumb,
-      inactiveThumbColor: lightestGreen,
+      activeTrackColor: aBitColor,
+      inactiveTrackColor: darkestColor,
+      activeColor: thumbColor,
+      inactiveThumbColor: lightestColor,
     );
   }
 }

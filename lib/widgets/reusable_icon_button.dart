@@ -9,7 +9,7 @@ class ReusableIconButton extends StatelessWidget {
   const ReusableIconButton(
       {Key? key,
       this.icon = Icons.close,
-      this.color = lightestGreen,
+      required this.color,
       required this.onPressed})
       : super(key: key);
 

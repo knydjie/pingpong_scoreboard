@@ -13,8 +13,8 @@ import 'package:knytbt_pingpong_scoreboard/widgets/dialog_box.dart';
 import 'package:knytbt_pingpong_scoreboard/class/game_data.dart';
 import 'package:knytbt_pingpong_scoreboard/widgets/dialog_box_one_button.dart';
 
-Color playerOneColor = playerOneService ? mainGreen : lightestGreen;
-Color playerTwoColor = playerOneService ? lightestGreen : mainGreen;
+Color playerOneColor = playerOneService ? mainColor : lightestColor;
+Color playerTwoColor = playerOneService ? lightestColor : mainColor;
 
 late bool playerOneService;
 
@@ -61,6 +61,7 @@ class _GameScreenState extends State<GameScreen> {
     playerOneService = configData.playerOneStartsFirst;
 
     return Scaffold(
+      backgroundColor: mainColor,
       body: Column(
         children: [
           Expanded(
@@ -81,7 +82,11 @@ class _GameScreenState extends State<GameScreen> {
                                   fit: BoxFit.fitWidth,
                                   child: Text(
                                     configData.playerOneName,
-                                    style: nameTextStyle,
+                                    style: TextStyle(
+                                      //TODO
+                                      color: textGameScreenColor,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                     textAlign: TextAlign.center,
                                   ),
                                 ),
@@ -93,7 +98,11 @@ class _GameScreenState extends State<GameScreen> {
                                   child: Text(
                                     '$playerOnePoint',
                                     textAlign: TextAlign.center,
-                                    style: pointTextStyle,
+                                    style: TextStyle(
+                                      //TODO
+                                      color: textGameScreenColor,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -143,7 +152,11 @@ class _GameScreenState extends State<GameScreen> {
                                 fit: BoxFit.fitWidth,
                                 child: Text(
                                   configData.playerTwoName,
-                                  style: nameTextStyle,
+                                  style: TextStyle(
+                                    //TODO
+                                    color: textGameScreenColor,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                   textAlign: TextAlign.center,
                                 ),
                               ),
@@ -155,7 +168,11 @@ class _GameScreenState extends State<GameScreen> {
                                 child: Text(
                                   '$playerTwoPoint',
                                   textAlign: TextAlign.center,
-                                  style: pointTextStyle,
+                                  style: TextStyle(
+                                    //TODO
+                                    color: textGameScreenColor,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ),
@@ -202,18 +219,18 @@ class _GameScreenState extends State<GameScreen> {
                     children: [
                       Text(
                         playerOneMatchWin.toString(),
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 30.0,
-                          color: mainGreen,
+                          color: mainColor,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       const SizedBox(width: 70.0),
                       Text(
                         playerTwoMatchWin.toString(),
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 30.0,
-                          color: mainGreen,
+                          color: mainColor,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -224,9 +241,9 @@ class _GameScreenState extends State<GameScreen> {
                   left: 30.0,
                   top: 23.0,
                   child: GestureDetector(
-                    child: const Icon(
+                    child: Icon(
                       Icons.arrow_back,
-                      color: mainGreen,
+                      color: mainColor,
                       size: 30.0,
                     ),
                     onTap: () {
@@ -730,17 +747,17 @@ class _GameScreenState extends State<GameScreen> {
   //If mainBlue (dark blue), it means that player will be doing the service
   Color checkColorPlayerOne(bool playerOneService) {
     if (playerOneService) {
-      return mainGreen;
+      return mainColor;
     } else {
-      return lightestGreen;
+      return lightestColor;
     }
   }
 
   Color checkColorPlayerTwo(bool playerOneService) {
     if (playerOneService) {
-      return lightestGreen;
+      return lightestColor;
     } else {
-      return mainGreen;
+      return mainColor;
     }
   }
 

@@ -26,7 +26,7 @@ class ReusableButton extends StatelessWidget {
         ),
       ),
       style: ElevatedButton.styleFrom(
-        primary: buttonGreen,
+        primary: buttonColor,
       ),
     );
   }

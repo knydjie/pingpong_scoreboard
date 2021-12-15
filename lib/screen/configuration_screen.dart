@@ -43,6 +43,7 @@ class _ConfigurationScreenState extends State<ConfigurationScreen> {
         return false;
       },
       child: Scaffold(
+        backgroundColor: mainColor,
         body: Center(
           child: SingleChildScrollView(
             child: Padding(
@@ -58,31 +59,31 @@ class _ConfigurationScreenState extends State<ConfigurationScreen> {
                       IntrinsicHeight(
                         child: Row(
                           children: [
-                            const RotatedBox(
+                            RotatedBox(
                               quarterTurns: 3,
                               child: Text(
                                 'Best of',
-                                style: TextStyle(color: lightestGreen),
+                                style: TextStyle(color: lightestColor),
                               ),
                             ),
                             RotatedBox(
                               quarterTurns: 1,
                               child: SliderTheme(
                                 data: SliderTheme.of(context).copyWith(
-                                  activeTrackColor: lightestGreen,
-                                  inactiveTrackColor: aBitGray,
-                                  thumbColor: blueThumb,
+                                  activeTrackColor: lightestColor,
+                                  inactiveTrackColor: aBitColor,
+                                  thumbColor: thumbColor,
                                   thumbShape: const RoundSliderThumbShape(
                                       enabledThumbRadius: 15.0),
                                   overlayShape: const RoundSliderOverlayShape(
                                       overlayRadius: 30.0),
-                                  inactiveTickMarkColor: darkestBlue,
+                                  inactiveTickMarkColor: darkestColor,
                                   overlayColor: const Color(0x2999CCFF),
                                   valueIndicatorShape:
                                       const PaddleSliderValueIndicatorShape(),
-                                  valueIndicatorColor: lightestGreen,
-                                  valueIndicatorTextStyle: const TextStyle(
-                                      color: darkestBlue,
+                                  valueIndicatorColor: lightestColor,
+                                  valueIndicatorTextStyle: TextStyle(
+                                      color: darkestColor,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 18.0),
                                 ),
@@ -104,25 +105,25 @@ class _ConfigurationScreenState extends State<ConfigurationScreen> {
                             ),
                             Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: const [
+                              children: [
                                 Text('1',
                                     style: TextStyle(
-                                      color: lightestGreen,
+                                      color: lightestColor,
                                       fontSize: 10.0,
                                     )),
                                 Text('2',
                                     style: TextStyle(
-                                      color: lightestGreen,
+                                      color: lightestColor,
                                       fontSize: 10.0,
                                     )),
                                 Text('3',
                                     style: TextStyle(
-                                      color: lightestGreen,
+                                      color: lightestColor,
                                       fontSize: 10.0,
                                     )),
                                 Text('4',
                                     style: TextStyle(
-                                      color: lightestGreen,
+                                      color: lightestColor,
                                       fontSize: 10.0,
                                     )),
                               ],
@@ -139,7 +140,7 @@ class _ConfigurationScreenState extends State<ConfigurationScreen> {
                           child: Column(
                             children: <Widget>[
                               TextFormField(
-                                style: const TextStyle(color: lightestGreen),
+                                style: TextStyle(color: lightestColor),
                                 onChanged: (value) {
                                   setState(() {
                                     playerOneName = value;
@@ -156,9 +157,10 @@ class _ConfigurationScreenState extends State<ConfigurationScreen> {
                                         },
                                       );
                                     },
+                                    color: lightestColor,
                                   ),
                                 ),
-                                cursorColor: lightestGreen,
+                                cursorColor: lightestColor,
                                 maxLength: 10,
                                 validator: (value) => value!.isEmpty
                                     ? 'The name cannot be empty'
@@ -168,7 +170,7 @@ class _ConfigurationScreenState extends State<ConfigurationScreen> {
                                 height: 8.0,
                               ),
                               TextFormField(
-                                style: const TextStyle(color: lightestGreen),
+                                style: TextStyle(color: lightestColor),
                                 onChanged: (value) {
                                   setState(() {
                                     playerTwoName = value;
@@ -189,9 +191,10 @@ class _ConfigurationScreenState extends State<ConfigurationScreen> {
                                         },
                                       );
                                     },
+                                    color: lightestColor,
                                   ),
                                 ),
-                                cursorColor: lightestGreen,
+                                cursorColor: lightestColor,
                                 maxLength: 10, //Max name's character is 10
                                 validator: (value) => value!
                                         .isEmpty //To check if the TextField is empty
@@ -218,7 +221,7 @@ class _ConfigurationScreenState extends State<ConfigurationScreen> {
                           ),
                           Text(
                             playerOneStartsFirst ? 'Service' : '',
-                            style: const TextStyle(color: lightestGreen),
+                            style: TextStyle(color: lightestColor),
                           ),
                           const SizedBox(
                             height: 20.0,
@@ -235,7 +238,7 @@ class _ConfigurationScreenState extends State<ConfigurationScreen> {
                           ),
                           Text(
                             playerOneStartsFirst ? '' : 'Service',
-                            style: const TextStyle(color: lightestGreen),
+                            style: TextStyle(color: lightestColor),
                           ),
                           const SizedBox(height: 15.0),
                         ],

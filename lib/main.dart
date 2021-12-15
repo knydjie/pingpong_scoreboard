@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
-// import 'package:google_mobile_ads/google_mobile_ads.dart';
-// import 'package:knytbt_pingpong_scoreboard/class/ad_state.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:knytbt_pingpong_scoreboard/class/ad_state.dart';
 import 'package:knytbt_pingpong_scoreboard/screen/configuration_screen.dart';
 import 'package:knytbt_pingpong_scoreboard/screen/welcome_screen.dart';
 import 'package:knytbt_pingpong_scoreboard/screen/winner_screen.dart';
 import 'package:knytbt_pingpong_scoreboard/screen/game_screen.dart';
 import 'package:flutter/services.dart';
 import 'package:knytbt_pingpong_scoreboard/const/constants.dart';
-// import 'package:provider/provider.dart';
+import 'package:provider/provider.dart';
 
 Future main() async {
   //Mobile ads initialization
   WidgetsFlutterBinding.ensureInitialized();
-  // final initFuture = MobileAds.instance.initialize();
-  // final adState = AdState(initFuture);
+  final initFuture = MobileAds.instance.initialize();
+  final adState = AdState(initFuture);
+
   //Screen will stay landscape
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.landscapeLeft,
@@ -22,12 +23,12 @@ Future main() async {
   //Status bar (battery, signal, etc) will be hidden
   await SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
       overlays: [SystemUiOverlay.bottom]);
-  runApp(const MyApp()
-      // Provider.value(
-      //   value: adState,
-      //   builder: (context, child) => const MyApp(),
-      // ),
-      );
+  runApp(
+    Provider.value(
+      value: adState,
+      builder: (context, child) => const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -40,9 +41,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: title,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        scaffoldBackgroundColor: mainGreen,
-      ),
       initialRoute: WelcomeScreen.id,
       routes: {
         WelcomeScreen.id: (context) => const WelcomeScreen(),

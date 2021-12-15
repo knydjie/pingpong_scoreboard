@@ -18,10 +18,10 @@ class ReusableCircleButton extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 12.0),
         child: Icon(
           icon,
-          color: lightestGreen,
+          color: lightestColor,
         ),
       ),
-      fillColor: buttonGreen,
+      fillColor: buttonColor,
       shape: const CircleBorder(),
     );
   }
